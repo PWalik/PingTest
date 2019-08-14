@@ -1,0 +1,30 @@
+﻿<Window x:Class="PingTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PingTest"
+        mc:Ignorable="d"
+        Title="Ping test" Height="450" Width="800">
+    <DockPanel LastChildFill="True">
+
+
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Margin="10 0 10 10" Grid.Column="0" Text="google.com" TextChanged="PINGEditChanged" Name="PINGEditBox" />
+            <Button Margin="10 0 10 10" Grid.Column="1" Content ="Wysyłaj zapytania PING przez 7 sek." Name ="StartPingButton" Click="Start_Ping"/>
+        </Grid>
+        <TextBlock Margin="10 0 10 5" DockPanel.Dock="Bottom" Grid.Column="2" Text="Adres do testowania PING" />
+
+        <ProgressBar  Margin="50 5 50 10" Minimum="0" Maximum="100" Value="0" Height="20" Name = "ProgressBar"  DockPanel.Dock="Bottom" Padding ="1"  Grid.Column="3" />
+        <TextBlock Margin="50 5 10 10" DockPanel.Dock="Bottom" Grid.Column="2" Text="Czas który upłynął od rozpoczęcia testu PING." />
+        <ScrollViewer>
+        <TextBlock  Margin="20 20 20 5" Background ="Black" Foreground="LightBlue" DockPanel.Dock="Top" Name ="PingText"  Height="Auto" VerticalAlignment ="Stretch" />
+        </ScrollViewer>
+    </DockPanel>
+
+
+</Window>
